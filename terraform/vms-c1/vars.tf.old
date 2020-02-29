@@ -1,0 +1,65 @@
+variable "name" {
+	default = "fxprdweb"
+}
+
+variable "name2" {
+        default = "api"
+}
+
+variable "machine_type" {
+	default = "n1-standard-1"
+}
+
+variable "zone" {
+	default = "us-central1-a"
+}
+
+variable "image" {
+	default = "ubuntu-1804-lts"
+}
+
+variable "network" {
+        default = "default"
+}
+
+variable "ssh_user" {
+        default = "bbelliv"
+}
+
+variable "ssh_user2" {
+        default = "api"
+}
+
+variable "public_key" {
+        default = "/Users/theuser/Documents/gcp/fox-master/terraform/tools_key.pub"
+}
+
+variable "private_key" {
+	default = "/Users/theuser/Documents/gcp/fox-master/terraform/tools_key"
+}
+
+variable "package_manager" {
+        default = "apt"
+}
+
+variable "update_packages" {
+        default = {
+		"yum" = "sudo yum update -y",
+		"apt" = "sudo apt update && sudo apt upgrade -y"
+
+	}
+}
+
+variable "packages" {
+        default = [
+		"wget",
+		"unzip"
+	]
+}
+
+variable "install_packages" {
+	default = {
+		"yum" = "sudo yum install -y",
+		"apt" = "sudo apt install -y"
+	}
+}
