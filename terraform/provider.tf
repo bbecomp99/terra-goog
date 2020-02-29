@@ -1,6 +1,6 @@
 // Configure the Google Cloud provider
 provider "google" {
- credentials = "${file("Fox Infra-3668afdf9e8f.json")}"
+ credentials = "${file("EEEo*****f.json")}"
  project     = "fox-infra"
  region      = "us-central-a"
 }
