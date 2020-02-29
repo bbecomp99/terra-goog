@@ -19,20 +19,20 @@ variable "private_key" {
 
 resource "google_compute_address" "static-ip-address" {
   count = "${var.node_count}"
-  name = "fxprdwebc3-static-ip-${count.index + 1}"
+  name = "***webc3-static-ip-${count.index + 1}"
   region = "us-central1"
 }
 
 resource "google_compute_disk" "fxprdwebc3" {
   count   = "${var.node_count}"
-  name    = "fxprdwebc3${count.index}-data"
+  name    = "****ebc3${count.index}-data"
   type    = "pd-standard"
   zone    = "us-central1-c"
   size    = "5"
 }
 resource "google_compute_instance" "fxprdwebc3" {
   count = "${var.node_count}"
-  name = "fxprdwebc3${count.index}"
+  name = "***dwebc3${count.index}"
   machine_type = "n1-highmem-4"
   zone = "us-central1-c"
   allow_stopping_for_update = true
