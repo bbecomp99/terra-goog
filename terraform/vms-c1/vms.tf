@@ -10,11 +10,11 @@ variable "ssh_user" {
 }
 
 variable "public_key" {
-        default = "/Users/theuser/Documents/gcp/fox-master/terraform/tools_key.pub"
+        default = "/Users/theus******y.pub"
 }
 
 variable "private_key" {
-	default = "/Users/theuser/Documents/gcp/fox-master/terraform/tools_key"
+	default = "/Users/theu******ey"
 }
 
 resource "google_compute_address" "static-ip-address" {
@@ -25,7 +25,7 @@ resource "google_compute_address" "static-ip-address" {
 
 resource "google_compute_disk" "fxprdwebc1" {
   count   = "${var.node_count}"
-  name    = "fxprdwebc1${count.index}-data"
+  name    = "***dwebc1${count.index}-data"
   type    = "pd-standard"
   zone    = "us-central1-a"
   size    = "5"
@@ -35,7 +35,7 @@ resource "google_compute_disk" "fxprdwebc1" {
 }
 resource "google_compute_instance" "fxprdwebc1" {
   count = "${var.node_count}"
-  name = "fxprdwebc1${count.index}"
+  name = "***webc1${count.index}"
   machine_type = "n1-highmem-4"
   zone = "us-central1-a"
   allow_stopping_for_update = true
