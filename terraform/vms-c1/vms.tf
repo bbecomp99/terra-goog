@@ -19,11 +19,11 @@ variable "private_key" {
 
 resource "google_compute_address" "static-ip-address" {
   count = "${var.node_count}"
-  name = "fxprdwebc1-static-ip-${count.index + 1}"
+  name = "***dwebc1-static-ip-${count.index + 1}"
   region = "us-central1"
 }
 
-resource "google_compute_disk" "fxprdwebc1" {
+resource "google_compute_disk" "***rdwebc1" {
   count   = "${var.node_count}"
   name    = "***dwebc1${count.index}-data"
   type    = "pd-standard"
@@ -33,7 +33,7 @@ resource "google_compute_disk" "fxprdwebc1" {
 
 
 }
-resource "google_compute_instance" "fxprdwebc1" {
+resource "google_compute_instance" "**webc1" {
   count = "${var.node_count}"
   name = "***webc1${count.index}"
   machine_type = "n1-highmem-4"
@@ -46,8 +46,8 @@ boot_disk {
   }
 }
 attached_disk {
-    source      = "${element(google_compute_disk.fxprdwebc1.*.self_link, count.index)}"
-    device_name = "${element(google_compute_disk.fxprdwebc1.*.name, count.index)}"
+    source      = "${element(google_compute_disk.***webc1.*.self_link, count.index)}"
+    device_name = "${element(google_compute_disk.***dwebc1.*.name, count.index)}"
 }
 
 
